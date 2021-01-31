@@ -16,20 +16,4 @@ class Calc:
         return x * y
 
     def divide(self, x, y):
-        try:
-            x / y
-        except ZeroDivisionError as e:
-            print("You can't divide by zero.")
         return x / y
-
-
-sys.path.append("..")
-
-
-class GetData:
-    def get_data(self, name):
-        path = os.path.join(os.getcwd(), "../calc.yml")
-        print(path)
-        with open(path) as file:
-            datas: list = yaml.safe_load(file)
-        return (datas[f'{name}']['datas'], datas[f'{name}']['ids'])
